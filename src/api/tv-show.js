@@ -13,6 +13,15 @@ export class TVShowAPI {
     }
   }
 
+  static async fetchByTitle(title) {
+    try {
+      const response = await axios.get(`${BASE_URL}/search/tv${API_KEY_PARAM}&query=${title}`);
+      return response.data.results;
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
   // Fetch
   // static async fetchPopulars() {
   //   try {
