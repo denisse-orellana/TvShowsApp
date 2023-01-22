@@ -12,24 +12,38 @@ import s from "./style.module.css";
 
 function App() {
   const [currentTVShow, setCurrentTVShow] = useState();
+  const [recommendationList, setRecommendationList] = useState([]);
 
   async function fetchPopulars() {
     const popularTVShowList = await TVShowAPI.fetchPopulars();
     if (popularTVShowList && popularTVShowList.length > 0) {
-      setCurrentTVShow(popularTVShowList[0])
+      setCurrentTVShow(popularTVShowList[0]);
     }
   }
 
   async function fetchByTitle(title) {
     const searchResponse = await TVShowAPI.fetchByTitle(title);
     if (searchResponse.length > 0) {
-      setCurrentTVShow(searchResponse[0])
+      setCurrentTVShow(searchResponse[0]);
+    }
+  }
+
+  async function fetchRecomendations(tvShowId) {
+    const recommendationListResp = await TVShowAPI.fetchRecomendations(tvShowId);
+    if (recommendationListResp.length > 0) {
+      setRecommendationList(recommendationListResp.slice(0,10));
     }
   }
 
   useEffect(() => {
     fetchPopulars();
-  }, [])
+  }, []);
+
+  useEffect(() => {
+    if (currentTVShow) {
+      fetchRecomendations(currentTVShow.id);
+    }
+  }, [currentTVShow]);    // Si cambia el currenTVShow debe volver a cargar un nuevo tvShow
 
   console.log(currentTVShow)
 
