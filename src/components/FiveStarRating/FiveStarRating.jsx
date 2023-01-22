@@ -1,4 +1,4 @@
-import { StarFill, StarHalf, Star as StarEmpty } from 'react-bootstrap-icons';
+import { StarFill, Star as StarEmpty } from 'react-bootstrap-icons';
 
 const FiveStarRating = ({ rating }) => {  // 4.5 rating
 
@@ -21,7 +21,7 @@ const FiveStarRating = ({ rating }) => {  // 4.5 rating
 
   // Push the empty stars icons
   for (let i = 1; i <= emptyStarCount; i++) {
-    starList.push(<StarEmpty key={'star-fill' + i} />)
+    starList.push(<StarEmpty key={'star-empty' + i} />)
   }
 
   return <div>{starList}</div>

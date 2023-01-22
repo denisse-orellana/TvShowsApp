@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo, useCallback } from 'react';  // core of react
-import Logo from './components/Logo/Logo'
+import Logo from './components/Logo/Logo';
+import SearchBar from './components/SearchBar/SearchBar';
 import TVShowDetail from './components/TVShowDetail/TVShowDetail'   // core of react
 
 import { TVShowAPI } from './api/tv-show';
@@ -16,6 +17,13 @@ function App() {
     const popularTVShowList = await TVShowAPI.fetchPopulars();
     if (popularTVShowList && popularTVShowList.length > 0) {
       setCurrentTVShow(popularTVShowList[0])
+    }
+  }
+
+  async function fetchByTitle(title) {
+    const searchResponse = await TVShowAPI.fetchByTitle(title);
+    if (searchResponse.length > 0) {
+      setCurrentTVShow(searchResponse[0])
     }
   }
 
@@ -47,7 +55,7 @@ function App() {
             />
           </div>
           <div className="col-md-12 col-lg-4">
-            <input style={{ width: "100%" }} type="text" />
+            <SearchBar onSubmit={fetchByTitle} />
           </div>
         </div>
       </div>
