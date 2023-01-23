@@ -22,13 +22,23 @@ function App() {
   //   }
   // }
 
-  //* useCallback 
-  const fetchPopulars = useCallback(async () => {
-    const popularTVShowList = await TVShowAPI.fetchPopulars();
-    if (popularTVShowList.length > 0) {
-      setCurrentTVShow(popularTVShowList[0]);
+  //* useCallback: memoriza funcion como ej fetchPopulars
+  // const fetchPopulars = useCallback(async () => {
+  //   const popularTVShowList = await TVShowAPI.fetchPopulars();
+  //   if (popularTVShowList.length > 0) {
+  //     setCurrentTVShow(popularTVShowList[0]);
+  //   }
+  // }, [currentTVShow])
+
+  //* useMemo: memoriza un valor como ej tvShowPopular
+  const fetchPopulars = useMemo(() => {
+    return async () => {
+      const popularTVShowList = await TVShowAPI.fetchPopulars();
+      if (popularTVShowList.length > 0) {
+        setCurrentTVShow(popularTVShowList[0]);
+      }
     }
-  }, [currentTVShow])
+  }, [currentTVShow]);
 
   async function fetchByTitle(title) {
     const searchResponse = await TVShowAPI.fetchByTitle(title);
