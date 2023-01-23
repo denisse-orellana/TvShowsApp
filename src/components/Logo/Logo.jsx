@@ -1,3 +1,4 @@
+import { LogoContainer, LogoImg, LogoTitle, LogoSubtitle } from './StyledLogo';
 import s from './style.module.css'
 
 const Logo = ({ image, title, subtitle }) => (
@@ -9,5 +10,15 @@ const Logo = ({ image, title, subtitle }) => (
     <span className={s.subtitle}>{subtitle}</span>
   </div>
 )
+
+// Styled components
+// const Logo = ({ image, title, subtitle }) => {
+//   <div>
+//     <LogoContainer>
+//       <LogoImg src={image} alt='logo' />
+//       <LogoTitle>{title}</LogoTitle>
+//     </LogoContainer>
+//   </div>
+// }
 
 export default Logo;
