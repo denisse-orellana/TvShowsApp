@@ -15,12 +15,12 @@ function App() {
   const [currentTVShow, setCurrentTVShow] = useState();
   const [recommendationList, setRecommendationList] = useState([]);
 
-  // async function fetchPopulars() {
-  //   const popularTVShowList = await TVShowAPI.fetchPopulars();
-  //   if (popularTVShowList && popularTVShowList.length > 0) {
-  //     setCurrentTVShow(popularTVShowList[0]);
-  //   }
-  // }
+  async function fetchPopulars() {
+    const popularTVShowList = await TVShowAPI.fetchPopulars();
+    if (popularTVShowList && popularTVShowList.length > 0) {
+      setCurrentTVShow(popularTVShowList[0]);
+    }
+  }
 
   //* useCallback: memoriza funcion como ej fetchPopulars
   // const fetchPopulars = useCallback(async () => {
@@ -31,14 +31,14 @@ function App() {
   // }, [currentTVShow])
 
   //* useMemo: memoriza un valor como ej tvShowPopular
-  const fetchPopulars = useMemo(() => {
-    return async () => {
-      const popularTVShowList = await TVShowAPI.fetchPopulars();
-      if (popularTVShowList.length > 0) {
-        setCurrentTVShow(popularTVShowList[0]);
-      }
-    }
-  }, [currentTVShow]);
+  // const fetchPopulars = useMemo(() => {
+  //   return async () => {
+  //     const popularTVShowList = await TVShowAPI.fetchPopulars();
+  //     if (popularTVShowList.length > 0) {
+  //       setCurrentTVShow(popularTVShowList[0]);
+  //     }
+  //   }
+  // }, [currentTVShow]);
 
   async function fetchByTitle(title) {
     const searchResponse = await TVShowAPI.fetchByTitle(title);
