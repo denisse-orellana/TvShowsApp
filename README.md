@@ -1,19 +1,18 @@
 # TvShowsApp
 
-Project that shows the latest and most populars Tv Shows.  
-
-## Preview 
-
-You can see the app here: []() 
-
-<p align="left"><img width="30%" src="./assets/images/landing/tvshowsapp-mobile"></p>
-<p align="left"><img width="80%" src="../assets/images/landing/tvshowsapp-desktop.png"></p>
+Project that shows the latest and most populars Tv Shows with The Movie Database API.  
 
 ## Tech
 
 * React   v18.2.0
 * Node    v16.14.2
 * Yarn    v1.22.19
-* Vite    v4.0.0 
+* Vite    v4.0.0
+## Preview 
 
+You can see the full app here: [TvShowsApp](https://tv-shows-tmdb.netlify.app/) 
 
+<p>
+  <img width="30%" src="/src/assets/images/landing/tvshowsapp-mobile.png">
+  <img width="80%" src="/src/assets/images/landing/movieapp-desktop.png">
+</p>
