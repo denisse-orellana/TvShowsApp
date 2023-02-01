@@ -10,7 +10,7 @@ Project that shows the latest and most populars Tv Shows with The Movie Database
 * Vite    v4.0.0
 ## Preview 
 
-You can see the full app here: [TvShowsApp](https://tv-shows-tmdb.netlify.app/) 
+You can see the full app deployed in Vercel: [TvShowsApp](https://tv-shows-tmdb.vercel.app/) 
 
 <p>
   <img width="30%" src="/src/assets/images/landing/tvshowsapp-mobile.png">
