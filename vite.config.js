@@ -15,7 +15,7 @@ export default defineConfig({
     incremental: true,
     // habilitar un trabajo conjunto con Babel para la interpretacion correcta de las versiones de js
     babel: {
-      pressets: [ "@babel/present-env", "@babel/preset-react"],
+      presets: [ "@babel/present-env", "@babel/preset-react"],
     },
     // Caso de Typescript: habilitar la acelarion de la compilacion de TS hacia JS
     // typescript: {
@@ -25,9 +25,13 @@ export default defineConfig({
     cache: true,
     // habiliitar la opcion de compresion para minimizar el tamaño de los archivos compilados
     minify: true,
-    // habilitar modo debug para las ejecuciones de la generacion del build 
-    debug: true,
     // especificar el ambiente en el cual estamos manejando este contexto de ejecucion
     mode: "production",
+    // habilitar la configuracion del buil mdiante chuncks parcelados
+    chunks: true,
+    // habilitar la confguracion para minimizar el tamaño 
+    moduleBundling: true,
+    // habilitar modo debug para las ejecuciones de la generacion del build 
+    debug: true,
   }
 })
