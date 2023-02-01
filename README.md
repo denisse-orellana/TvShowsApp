@@ -2,7 +2,7 @@
 
 Project that shows the latest and most populars Tv Shows with The Movie Database API.  
 
-*Project from [React JS - Escalab Academy](https://escalab.tech/) - Full Stack MERN*
+*Project from [React JS - Full Stack MERN - Escalab Academy](https://escalab.tech/)*
 
 ## Tech
 
