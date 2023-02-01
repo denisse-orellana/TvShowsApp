@@ -14,5 +14,5 @@ You can see the full app here: [TvShowsApp](https://tv-shows-tmdb.netlify.app/)
 
 <p>
   <img width="30%" src="/src/assets/images/landing/tvshowsapp-mobile.png">
-  <img width="80%" src="/src/assets/images/landing/movieapp-desktop.png">
+  <img width="100%" src="/src/assets/images/landing/movieapp-desktop.png">
 </p>

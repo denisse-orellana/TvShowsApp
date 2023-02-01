@@ -27,5 +27,7 @@ export default defineConfig({
     minify: true,
     // habilitar modo debug para las ejecuciones de la generacion del build 
     debug: true,
+    // especificar el ambiente en el cual estamos manejando este contexto de ejecucion
+    mode: "production",
   }
 })
